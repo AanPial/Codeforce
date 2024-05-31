@@ -16,7 +16,7 @@ public class Verify_Password {
             return 0;
         }
     }
-    public static int chekDigitOrder(String sd) {
+    public static int chekOrder(String sd) {
         int n = sd.length();
         char temp;
         char[] ch1 = new char[n];
@@ -42,32 +42,7 @@ public class Verify_Password {
             return 0;
         }
     }
-    public static int checkCharOrder(String sch) {
-        int n = sch.length();
-        char temp;
-        char[] ch1 = new char[n];
-        for (int i = 0; i < n; i++) {
-            ch1[i] = sch.charAt(i);
-        }
-        char[] ch = new char[n];
-        for (int i = 0; i < n; i++) {
-            ch[i] = sch.charAt(i);
-        }
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (ch[i] > ch[j]) {
-                    temp = ch[i];
-                    ch[i] = ch[j];
-                    ch[j] = temp;
-                }
-            }
-        }
-        if (Arrays.equals(ch, ch1)) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int M = sc.nextInt();
@@ -94,8 +69,8 @@ public class Verify_Password {
             }
             int ser = serialTest(st, sd, sch);
             int cas = testCase(sch);
-            int cdo = chekDigitOrder(sd);
-            int cco = checkCharOrder(sch);
+            int cdo = chekOrder(sd);
+            int cco = chekOrder(sch);
             if (ser == 1 && cas == 1 && cdo == 1 && cco == 1) {
                 System.out.println("YES");
             } else {
@@ -104,5 +79,3 @@ public class Verify_Password {
         }
     }
 }
-
-
