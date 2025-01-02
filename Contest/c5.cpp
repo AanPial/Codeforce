@@ -36,5 +36,4 @@ int main()
     }
     cout<<c+k<<endl;
     return 0;
-    return 0;
 }
