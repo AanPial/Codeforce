@@ -24,7 +24,7 @@ int main()
         {
             int p = n / 2020;
             int q = n % 2020;
-            if (q <= p)
+            if (q <= p && z == n)
             {
                 cout << "YES" << endl;
             }
